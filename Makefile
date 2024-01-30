@@ -6,7 +6,7 @@
 #    By: eshintan <eshintan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 21:49:39 by eshintan          #+#    #+#              #
-#    Updated: 2024/01/30 05:21:53 by eshintan         ###   ########.fr        #
+#    Updated: 2024/01/30 09:07:03 by eshintan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,12 @@ INCLUDE	=	include
 
 RM		= rm -f
 
-SRCS 		= ft_printf.c
+SRCS 		= ft_printf.c ft_printf_utils.c
 
 OBJS 		= $(SRCS:.c=.o)
 
-libft		= libft/libft.a
-
 $(NAME):	$(OBJS)
-				make -C libft
-					ar rcs $(NAME)	$(OBJS) $(libft)
+					ar rcs $(NAME)	$(OBJS)
 				
 all:		$(NAME)
 
