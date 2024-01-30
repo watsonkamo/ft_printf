@@ -6,7 +6,7 @@
 /*   By: eshintan <eshintan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 21:43:14 by eshintan          #+#    #+#             */
-/*   Updated: 2024/01/30 08:54:50 by eshintan         ###   ########.fr       */
+/*   Updated: 2024/01/30 09:02:03 by eshintan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,16 +128,7 @@ int	put_hex(unsigned long num, int uppercase)
 	len = 0;
 	hex_digits = "0123456789abcdef";
 	if (uppercase)
-	{
 		hex_digits = "0123456789ABCDEF";
-		// hex_digits[10] = 'A';
-		// hex_digits[11] = 'B';
-		// hex_digits[12] = 'C';
-		// hex_digits[13] = 'D';
-		// hex_digits[14] = 'E';
-		// hex_digits[15] = 'F';
-	}
-	// dprintf(2, "%s -> %d\n", __FILE__, __LINE__);
 	if (num >= 16)
 		len += put_hex(num / 16, uppercase);
 	len += put_char(hex_digits[num % 16]);
@@ -149,20 +140,10 @@ int	put_ptr(void *ptr)
 	long	len;
 
 	len = 0;
-
 	len += put_str("0x");
 	len += put_hex((unsigned long)ptr, 0);
 	return (len);
 }
-
-// int	judge(void	*ptr)
-// {
-// 	unsigned long	address = (unsigned long)ptr;
-
-// 	if (address > ULONG_MAX || address < 0)
-// 		return ();
-// 	return ();
-// }
 
 int	put_percent(void)
 {
